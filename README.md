@@ -33,6 +33,6 @@ Normally, this prompt is symbolised by a "$" at the beginning of a new line, via
 
 The first argument in the write function tells what sort of message is being written, whereas the next two feature the string to be written and the amount of characters to be written, respectively.
 
-By changing the middle argument to "$Hamid-Sina ", and the last argument to 12, now the code works as such that after all previous arguments provided by the user have been completed, it will open a new prompt, starting with
+By changing the middle argument to "Hamid-Sina$ ", and the last argument to 12, now the code works as such that after all previous arguments provided by the user have been completed, it will open a new prompt, starting with
 
-``` $Hamid-Sina ```
+``` Hamid-Sina$ ```
