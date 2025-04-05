@@ -1,6 +1,6 @@
 # xv6-project
 
-This branch of MIT's xv6 OS is a coding project by Sina Ehsanzadeh and Seyed Hamid Hosseini, to learn more of how operating systems work and how to add features and make improvement to its processes. 
+This clone of MIT's xv6 OS is a coding project by Sina Ehsanzadeh and Seyed Hamid Hosseini, to learn more of how operating systems work and how to add features and make improvement to its processes. 
 
 This file shall document the steps preformed during all stages of the project.
 
