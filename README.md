@@ -27,3 +27,27 @@ The first argument in this command defines the type of message being printed. Th
 We change the second argument to "Hamid-Sina$ " and the third argument to 12 accordingly.
 
 Once the OS is recompiled, we will now recieve ```Hamid-Sina$ ``` as our shell input prompt.
+
+# Stage 3: "!" command addition and "os" substring identification and recolouring
+
+In this stage we intend to make a "!" command, in which when the argument "!" is recieved, it will read all following arguments and print them out again.
+
+For instance, if we enter
+
+```Hamid-Sina$ ! Hello! ```
+
+We will recieve
+
+```Hello! ```
+
+To do this, we need to define ! as a command in the shell file, "sh.c".
+
+All inputs in the terminal are parsed via ```parsecmd```, which grabs the string and interprets it as a command. This command is then identified between a switch case of various operations. EXEC is a case for executing commands, which is what we are looking for.
+
+We add an if statement, where if the first (and only first) argument, known as "ecmd->argv[0]", is equal to "!" (this is done using C's ```strcmp()``` function, that compares two strings and gives an integer depending on the alphabetical hierarchy of the first and second argument, and gives a "0" if they are the same), it will then take all remaining arguments and print them out as a message (the last argument i has ecmd->argv[i] equal to 0).
+
+However, there is another feature we want to add to this command. If it detects any instance of "os" as a string or substring within the arguments, it will write them out in blue. The necessary actions for this is to introduce a pointer to the beginning character of the string argument, then cycling through all characters (or a mmzximum 512, a limitation we impose because of the limitations of xv6's virtual space processing) and if it ever finds an instance of "os", it will call a function in assembly code which recolours the font of what is printed, then revert it once that part is printed out.
+
+And like that, the ! command has been added to the shell.
+
+This is *not* a good way to add this command, as it is treating itself as a rather messy subsidiary of an EXEC command, but for the purpose of the beginnning, it does what we need.
